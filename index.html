@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알비온 온라인 통합 가이드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: { 
+                    colors: { 
+                        albionDark: '#0f172a',
+                        albionCard: '#1e293b',
+                        albionGold: '#f59e0b',
+                        martlock: '#3b82f6',
+                        lymhurst: '#22c55e',
+                        bridgewatch: '#f97316',
+                        fortsterling: '#e2e8f0',
+                        thetford: '#a855f7',
+                        caerleon: '#ef4444',
+                        brecilien: '#d946ef',
+                    } 
+                }
+            }
+        }
+    </script>
+    <style>
+        .tier-badge {
+            background-color: #334155;
+            color: #94a3b8;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 0.1rem 0.35rem;
+            border-radius: 0.25rem;
+            margin-left: 0.25rem;
+            vertical-align: middle;
+        }
+        .type-badge {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.2rem;
+            margin-right: 0.2rem;
+        }
+        .crop-badge { background-color: #166534; color: #bbf7d0; }
+        .herb-badge { background-color: #312e81; color: #c7d2fe; }
+        .animal-badge { background-color: #7c2d12; color: #ffedd5; }
+        .city-label { font-size: 0.75rem; color: #94a3b8; margin-left: 0.25rem; font-weight: normal; }
+    </style>
+</head>
+<body class="bg-albionDark text-gray-200 min-h-screen p-6 font-sans flex flex-col">
+
+    <!-- 메인 콘텐츠 영역 (화면을 꽉 채우도록 flex-grow 적용) -->
+    <div class="flex-grow">
+        <div class="max-w-7xl mx-auto mb-10 text-center">
+            <h1 class="text-3xl font-bold text-albionGold mb-2">알비온 온라인 통합 가이드</h1>
+            <p class="text-gray-400">도시별 제작/농사 보너스와 자원 반환율을 한 번에 확인하세요.</p>
+        </div>
+
+        <!-- 1. 마을 보너스 섹션 -->
+        <div class="max-w-7xl mx-auto mb-16">
+            <h2 class="text-2xl font-bold text-white mb-6 border-b border-slate-700 pb-2">🏰 도시별 +10% 생산 및 수확 보너스</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <!-- 림허스트 -->
+                <div class="bg-albionCard rounded-xl shadow-lg border-t-4 border-lymhurst p-5 hover:-translate-y-1 transition-transform">
+                    <h3 class="text-xl font-bold text-lymhurst mb-4 flex items-center"><span class="text-2xl mr-2">🌳</span> Lymhurst (림허스트)</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-slate-800 p-3 rounded">
+                            <span class="text-gray-400 block mb-1">🔨 제련: <span class="font-bold text-white">섬유/천 (Fiber)</span></span>
+                            <span class="text-gray-400 block">⚔️ 제작: <span class="text-gray-200">검, 활, 아케인 지팡이, 가죽 투구, 가죽 신발</span></span>
+                        </div>
+                        <div class="bg-slate-800 p-3 rounded border border-slate-600 leading-relaxed">
+                            <span class="text-gray-400 block mb-2">🌾 농사 및 가축 보너스</span>
+                            <div class="mb-1"><span class="type-badge crop-badge">작물</span>당근<span class="tier-badge">T1</span>, 호박<span class="tier-badge">T8</span></div>
+                            <div class="mb-1"><span class="type-badge herb-badge">약초</span>톱날 우엉<span class="tier-badge">T4</span></div>
+                            <div><span class="type-badge animal-badge">가축</span>거위<span class="tier-badge">T5</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 마트록 -->
+                <div class="bg-albionCard rounded-xl shadow-lg border-t-4 border-martlock p-5 hover:-translate-y-1 transition-transform">
+                    <h3 class="text-xl font-bold text-martlock mb-4 flex items-center"><span class="text-2xl mr-2">🛡️</span> Martlock (마트록)</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-slate-800 p-3 rounded">
+                            <span class="text-gray-400 block mb-1">🔨 제련: <span class="font-bold text-white">가죽 (Hide)</span></span>
+                            <span class="text-gray-400 block">⚔️ 제작: <span class="text-gray-200">도끼, 쿼터스태프, 얼음 지팡이, 판금 신발, 보조 장비</span></span>
+                        </div>
+                        <div class="bg-slate-800 p-3 rounded border border-slate-600 leading-relaxed">
+                            <span class="text-gray-400 block mb-2">🌾 농사 및 가축 보너스</span>
+                            <div class="mb-1"><span class="type-badge crop-badge">작물</span>밀<span class="tier-badge">T3</span>, 감자<span class="tier-badge">T6</span></div>
+                            <div class="mb-1"><span class="type-badge herb-badge">약초</span>엘루시브 폭스글러브<span class="tier-badge">T6</span></div>
+                            <div><span class="type-badge animal-badge">가축</span>소<span class="tier-badge">T8</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 브릿지워치 -->
+                <div class="bg-albionCard rounded-xl shadow-lg border-t-4 border-bridgewatch p-5 hover:-translate-y-1 transition-transform">
+                    <h3 class="text-xl font-bold text-bridgewatch mb-4 flex items-center"><span class="text-2xl mr-2">🏜️</span> Bridgewatch (브릿지워치)</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-slate-800 p-3 rounded">
+                            <span class="text-gray-400 block mb-1">🔨 제련: <span class="font-bold text-white">석재/돌 (Stone)</span></span>
+                            <span class="text-gray-400 block">⚔️ 제작: <span class="text-gray-200">단검, 석궁, 저주 지팡이, 판금 갑옷, 천 샌들</span></span>
+                        </div>
+                        <div class="bg-slate-800 p-3 rounded border border-slate-600 leading-relaxed">
+                            <span class="text-gray-400 block mb-2">🌾 농사 및 가축 보너스</span>
+                            <div class="mb-1"><span class="type-badge crop-badge">작물</span>콩<span class="tier-badge">T2</span>, 옥수수<span class="tier-badge">T7</span></div>
+                            <div class="mb-1"><span class="type-badge herb-badge">약초</span>드래곤 티즐<span class="tier-badge">T5</span></div>
+                            <div><span class="type-badge animal-badge">가축</span>염소<span class="tier-badge">T4</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 포트스털링 -->
+                <div class="bg-albionCard rounded-xl shadow-lg border-t-4 border-fortsterling p-5 hover:-translate-y-1 transition-transform">
+                    <h3 class="text-xl font-bold text-fortsterling mb-4 flex items-center"><span class="text-2xl mr-2">❄️</span> Fort Sterling (포트스털링)</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-slate-800 p-3 rounded">
+                            <span class="text-gray-400 block mb-1">🔨 제련: <span class="font-bold text-white">목재/나무 (Wood)</span></span>
+                            <span class="text-gray-400 block">⚔️ 제작: <span class="text-gray-200">해머, 창, 신성 지팡이, 천 갑옷, 판금 투구</span></span>
+                        </div>
+                        <div class="bg-slate-800 p-3 rounded border border-slate-600 leading-relaxed">
+                            <span class="text-gray-400 block mb-2">🌾 농사 및 가축 보너스</span>
+                            <div class="mb-1"><span class="type-badge crop-badge">작물</span>순무<span class="tier-badge">T4</span></div>
+                            <div class="mb-1"><span class="type-badge herb-badge">약초</span>구울 야로우<span class="tier-badge">T8</span></div>
+                            <div><span class="type-badge animal-badge">가축</span>닭<span class="tier-badge">T3</span>, 양<span class="tier-badge">T6</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뎃포드 -->
+                <div class="bg-albionCard rounded-xl shadow-lg border-t-4 border-thetford p-5 hover:-translate-y-1 transition-transform">
+                    <h3 class="text-xl font-bold text-thetford mb-4 flex items-center"><span class="text-2xl mr-2">늪</span> Thetford (뎃포드)</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-slate-800 p-3 rounded">
+                            <span class="text-gray-400 block mb-1">🔨 제련: <span class="font-bold text-white">광석/주괴 (Ore)</span></span>
+                            <span class="text-gray-400 block">⚔️ 제작: <span class="text-gray-200">메이스, 자연 지팡이, 화염 지팡이, 가죽 갑옷, 천 두건</span></span>
+                        </div>
+                        <div class="bg-slate-800 p-3 rounded border border-slate-600 leading-relaxed">
+                            <span class="text-gray-400 block mb-2">🌾 농사 및 가축 보너스</span>
+                            <div class="mb-1"><span class="type-badge crop-badge">작물</span>양배추<span class="tier-badge">T5</span></div>
+                            <div class="mb-1"><span class="type-badge herb-badge">약초</span>아케인 아가릭<span class="tier-badge">T2</span>, 파이어터치드 뮬린<span class="tier-badge">T7</span></div>
+                            <div><span class="type-badge animal-badge">가축</span>돼지<span class="tier-badge">T7</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 칼레온 & 브레실리엔 -->
+                <div class="space-y-6">
+                    <!-- 칼레온 -->
+                    <div class="bg-albionCard rounded-xl shadow-lg border-t-4 border-caerleon p-5 hover:-translate-y-1 transition-transform">
+                        <h3 class="text-xl font-bold text-caerleon mb-4 flex items-center"><span class="text-2xl mr-2">⚔️</span> Caerleon (칼레온)</h3>
+                        <div class="space-y-2 text-sm bg-slate-800 p-3 rounded border border-slate-600 leading-relaxed">
+                            <div class="mb-1"><span class="type-badge herb-badge">약초</span>브라이트리프 컴프리<span class="tier-badge">T3</span></div>
+                            <div class="mb-1 pl-10">드래곤 티즐<span class="tier-badge">T5</span></div>
+                            <div class="pl-10">파이어터치드 뮬린<span class="tier-badge">T7</span></div>
+                            <div class="text-gray-500 text-xs mt-2">* 칼레온은 작물 및 가축 보너스 없음</div>
+                        </div>
+                    </div>
+                    <!-- 브레실리엔 -->
+                    <div class="bg-albionCard rounded-xl shadow-lg border-t-4 border-brecilien p-5 hover:-translate-y-1 transition-transform">
+                        <h3 class="text-xl font-bold text-brecilien mb-4 flex items-center"><span class="text-2xl mr-2">✨</span> Brecilien (브레실리엔)</h3>
+                        <div class="space-y-2 text-sm bg-slate-800 p-3 rounded border border-slate-600 leading-relaxed">
+                            <div><span class="type-badge crop-badge">작물</span>모든 작물 보너스<span class="tier-badge">ALL</span></div>
+                            <div class="text-gray-500 text-xs mt-2">* 브레실리엔은 약초 및 가축 보너스 없음</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. 도구 섹션 -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            
+            <!-- 가축별 선호 작물 표 -->
+            <div>
+                <h2 class="text-2xl font-bold text-white mb-6 border-b border-slate-700 pb-2">🐾 가축별 선호 작물 (성장 효율 2배)</h2>
+                <div class="bg-albionCard rounded-xl shadow-lg p-5 border border-slate-700 overflow-hidden">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-slate-800 text-gray-400">
+                            <tr>
+                                <th class="p-3 rounded-tl-lg">가축 및 주요 생산지</th>
+                                <th class="p-3">좋아하는 작물 및 생산지</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-700 text-gray-200">
+                            <tr class="hover:bg-slate-800/50">
+                                <td class="p-3">닭 <span class="tier-badge">T3</span> <span class="city-label">(포트스털링)</span></td>
+                                <td class="p-3 text-albionGold font-bold">밀 <span class="tier-badge">T3</span> <span class="city-label">(마트록)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50">
+                                <td class="p-3">염소 <span class="tier-badge">T4</span> <span class="city-label">(브릿지워치)</span></td>
+                                <td class="p-3 text-albionGold font-bold">순무 <span class="tier-badge">T4</span> <span class="city-label">(포트스털링)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50">
+                                <td class="p-3">거위 <span class="tier-badge">T5</span> <span class="city-label">(림허스트)</span></td>
+                                <td class="p-3 text-albionGold font-bold">양배추 <span class="tier-badge">T5</span> <span class="city-label">(뎃포드)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50">
+                                <td class="p-3">양 <span class="tier-badge">T6</span> <span class="city-label">(포트스털링)</span></td>
+                                <td class="p-3 text-albionGold font-bold">감자 <span class="tier-badge">T6</span> <span class="city-label">(마트록)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50">
+                                <td class="p-3">돼지 <span class="tier-badge">T7</span> <span class="city-label">(뎃포드)</span></td>
+                                <td class="p-3 text-albionGold font-bold">옥수수 <span class="tier-badge">T7</span> <span class="city-label">(브릿지워치)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/50">
+                                <td class="p-3">소 <span class="tier-badge">T8</span> <span class="city-label">(마트록)</span></td>
+                                <td class="p-3 text-albionGold font-bold">호박 <span class="tier-badge">T8</span> <span class="city-label">(림허스트)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 자원 반환율(RRR) 계산기 -->
+            <div>
+                <h2 class="text-2xl font-bold text-white mb-6 border-b border-slate-700 pb-2">🔄 자원 반환율(RRR) 계산기</h2>
+                <div class="bg-albionCard p-6 rounded-xl shadow-lg border border-slate-700">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">초기 자원 투입량</label>
+                            <input type="number" id="inputAmount" placeholder="예: 1000" class="w-full bg-slate-800 border border-slate-600 rounded px-3 py-2 text-white focus:outline-none focus:border-albionGold">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">제작 조건 (마을 보너스 & 집중)</label>
+                            <select id="rrrRate" class="w-full bg-slate-800 border border-slate-600 rounded px-3 py-2 text-white focus:outline-none focus:border-albionGold">
+                                <option value="0.152">보너스 없음 (15.2%)</option>
+                                <option value="0.367">마을 보너스 적용 (36.7%)</option>
+                                <option value="0.435">보너스 없음 + 집중(Focus) 사용 (43.5%)</option>
+                                <option value="0.539">마을 보너스 + 집중(Focus) 사용 (53.9%)</option>
+                            </select>
+                        </div>
+                        <button onclick="calculateRRR()" class="w-full bg-albionGold hover:bg-yellow-600 text-slate-900 font-bold py-3 px-4 rounded transition-colors mt-2">
+                            수익률 계산하기
+                        </button>
+                    </div>
+
+                    <div id="resultBox" class="mt-6 hidden bg-slate-800 p-4 rounded-lg border border-slate-600">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm text-gray-400">1회 제작 후 반환량:</span>
+                            <span id="firstReturn" class="font-bold text-white">0</span>
+                        </div>
+                        <div class="flex justify-between pt-2 border-t border-slate-700">
+                            <span class="text-sm text-albionGold">최종 누적 생산 가능량:</span>
+                            <span id="totalProduced" class="font-bold text-albionGold text-lg">0</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2 text-right">* 소수점 내림 처리됨</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3. 푸터 (제작자 표시) 심플 버전 -->
+    <footer class="max-w-7xl mx-auto border-t border-slate-700 pt-6 pb-8 text-center mt-auto">
+        <p class="text-albionGold font-bold tracking-wider text-sm">
+            제작자 soifather
+        </p>
+    </footer>
+
+    <!-- 계산기 자바스크립트 로직 -->
+    <script>
+        function calculateRRR() {
+            const inputAmount = parseFloat(document.getElementById('inputAmount').value);
+            const rrrRate = parseFloat(document.getElementById('rrrRate').value);
+
+            if (isNaN(inputAmount) || inputAmount <= 0) {
+                alert("정확한 자원 투입량을 입력해주세요.");
+                return;
+            }
+
+            const firstReturn = Math.floor(inputAmount * rrrRate); 
+            const totalProduced = Math.floor(inputAmount / (1 - rrrRate)); 
+
+            document.getElementById('firstReturn').innerText = firstReturn.toLocaleString() + " 개";
+            document.getElementById('totalProduced').innerText = totalProduced.toLocaleString() + " 개";
+            document.getElementById('resultBox').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
